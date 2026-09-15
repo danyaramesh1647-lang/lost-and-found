@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lost & Found Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="board-container">
+    <div class="board-header">
+      <h1>🔎 Lost & Found Board</h1>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+
+    <div class="post-form">
+      <h2>Post an item</h2>
+      <select id="itemType">
+        <option value="lost">I lost something</option>
+        <option value="found">I found something</option>
+      </select>
+      <input type="text" id="itemTitle" placeholder="Item title (e.g. Black backpack)" required />
+      <textarea id="itemDescription" placeholder="Description (color, brand, distinguishing features...)"></textarea>
+      <input type="text" id="itemLocation" placeholder="Location (e.g. Library, 2nd floor)" />
+      <input type="file" id="itemImage" accept="image/*" />
+      <button id="postItemBtn">Post Item</button>
+    </div>
+
+    <div id="itemsGrid" class="items-grid"></div>
+
+    <p id="boardMessage" class="message"></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-client.js"></script>
+  <script src="board.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+body {
+  background-color: #4A3826;
+  background-image:
+    radial-gradient(circle, rgba(0,0,0,0.15) 1px, transparent 1px);
+  background-size: 14px 14px;
+  min-height: 100vh;
+  padding: 30px 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ============ AUTH PAGE (pinned index card) ============ */
+.auth-container {
+  background: #F3EDE0;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 360px;
+  margin: 60px auto;
+  text-align: left;
+  position: relative;
+  box-shadow: 4px 6px 14px rgba(0,0,0,0.35);
+  clip-path: polygon(0% 1%, 3% 0%, 97% 0%, 100% 2%, 99% 98%, 96% 100%, 2% 100%, 0% 97%);
+}
+
+.auth-container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e8746a, #8f2a20 70%);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+}
+
+.auth-container h1 {
+  font-family: 'Special Elite', monospace;
+  margin-bottom: 4px;
+  color: #2b2119;
+  font-size: 26px;
+}
+
+.auth-container .tagline {
+  font-size: 12px;
+  color: #7a6a55;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 2px dashed #c9bda6;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  font-family: 'Special Elite', monospace;
+  font-size: 14px;
+  cursor: pointer;
+  color: #9a8b71;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-btn.active {
+  color: #8f2a20;
+  border-bottom: 3px solid #8f2a20;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form input {
+  padding: 11px;
+  border: 1px solid #c9bda6;
+  background: #fff;
+  font-size: 14px;
+  color: #2b2119;
+}
+
+.auth-form button {
+  padding: 12px;
+  background: #2b2119;
+  color: #F3EDE0;
+  border: none;
+  font-family: 'Special Elite', monospace;
+  font-size: 14px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.auth-form button:hover {
+  background: #4A3826;
+}
+
+.message {
+  margin-top: 14px;
+  font-size: 13px;
+  min-height: 18px;
+  color: #8f2a20;
+}
+
+/* ============ BOARD PAGE ============ */
+.board-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid rgba(255,255,255,0.15);
+}
+
+.board-header h1 {
+  font-family: 'Special Elite', monospace;
+  font-size: 28px;
+  color: #F3EDE0;
+}
+
+.board-header .subtitle {
+  font-size: 12px;
+  color: #c9bda6;
+  margin-top: 4px;
+}
+
+.logout-btn {
+  background: transparent;
+  color: #F3EDE0;
+  border: 1px solid #c9bda6;
+  padding: 8px 16px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.logout-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* --- Post form styled as a clipped index card --- */
+.post-form {
+  background: #F3EDE0;
+  padding: 22px 26px;
+  margin-bottom: 32px;
+  max-width: 480px;
+  box-shadow: 3px 5px 12px rgba(0,0,0,0.3);
+  clip-path: polygon(0% 1%, 3% 0%, 97% 0%, 100% 2%, 99% 98%, 96% 100%, 2% 100%, 0% 97%);
+}
+
+.post-form h2 {
+  font-family: 'Special Elite', monospace;
+  margin-bottom: 14px;
+  color: #2b2119;
+  font-size: 16px;
+}
+
+.post-form input,
+.post-form select,
+.post-form textarea {
+  width: 100%;
+  padding: 9px;
+  margin-bottom: 10px;
+  border: 1px solid #c9bda6;
+  background: #fff;
+  font-size: 13px;
+  color: #2b2119;
+  font-family: 'Inter', sans-serif;
+}
+
+.post-form textarea {
+  resize: vertical;
+  min-height: 56px;
+}
+
+.post-form button {
+  padding: 11px 18px;
+  background: #2b2119;
+  color: #F3EDE0;
+  border: none;
+  font-family: 'Special Elite', monospace;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.post-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Item cards: pinned flyers, alternating tilt --- */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 28px;
+  padding-top: 10px;
+}
+
+.item-card {
+  background: #F3EDE0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 3px 5px 12px rgba(0,0,0,0.35);
+  clip-path: polygon(0% 1%, 3% 0%, 97% 0%, 100% 2%, 99% 98%, 96% 100%, 2% 100%, 0% 97%);
+}
+
+.item-card.tilt-a { transform: rotate(-1.6deg); }
+.item-card.tilt-b { transform: rotate(1.4deg); }
+.item-card.tilt-c { transform: rotate(-0.8deg); }
+.item-card.tilt-d { transform: rotate(1.1deg); }
+
+.item-card:hover {
+  transform: rotate(0deg) scale(1.02);
+  transition: transform 0.15s ease-out;
+}
+
+.pin {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+}
+
+.pin.lost { background: radial-gradient(circle at 35% 30%, #e8746a, #8f2a20 70%); }
+.pin.found { background: radial-gradient(circle at 35% 30%, #6fae87, #2c5a3f 70%); }
+.pin.resolved { background: radial-gradient(circle at 35% 30%, #b8b0a0, #6b6255 70%); }
+
+.item-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: #d8cfbb;
+  display: block;
+  margin-top: 8px;
+}
+
+.item-card-body {
+  padding: 14px 16px 16px;
+}
+
+.item-badge {
+  display: inline-block;
+  font-family: 'Special Elite', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border: 2px solid;
+  transform: rotate(-3deg);
+  margin-bottom: 8px;
+}
+
+.item-badge.lost { color: #8f2a20; border-color: #8f2a20; }
+.item-badge.found { color: #2c5a3f; border-color: #2c5a3f; }
+.item-badge.resolved { color: #6b6255; border-color: #6b6255; text-decoration: line-through; }
+
+.item-card h3 {
+  font-family: 'Special Elite', monospace;
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #2b2119;
+}
+
+.item-card p {
+  font-size: 12.5px;
+  color: #5a4f3e;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.item-card .location {
+  font-size: 11.5px;
+  color: #8a7c64;
+}
+
+.resolve-btn, .delete-item-btn {
+  margin-top: 10px;
+  padding: 7px 10px;
+  border: none;
+  font-size: 11px;
+  cursor: pointer;
+  margin-right: 6px;
+  font-family: 'Inter', sans-serif;
+}
+
+.resolve-btn {
+  background: #2c5a3f;
+  color: white;
+}
+
+.delete-item-btn {
+  background: #8f2a20;
+  color: white;
+}
